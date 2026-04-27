@@ -157,7 +157,16 @@ class TypeChecker(PJPVisitor):
 
     def visitParenExpr(self, ctx):
         return self.visit(ctx.expression())
-    
+
+    def visitCharAtExpr(self, ctx):
+        s_type = self.visit(ctx.expression(0))
+        i_type = self.visit(ctx.expression(1))
+        if s_type != 'string':
+            self.errors.append("Error: charAt first argument must be string")
+        if i_type != 'int':
+            self.errors.append("Error: charAt second argument must be int")
+        return 'string'
+
     def visitHigherLowerExpr(self, ctx):
         l = self.visit(ctx.expression(0))
         r = self.visit(ctx.expression(1))
@@ -244,6 +253,8 @@ class CodeGenerator(PJPVisitor):
             l = self.infer_type(ctx.expression(0))
             r = self.infer_type(ctx.expression(1))
             return 'float' if 'float' in (l, r) else 'int'
+        if isinstance(ctx, PJPParser.CharAtExprContext):
+            return 'string'
         return None
     
     def visitProg(self, ctx):
@@ -393,6 +404,12 @@ class CodeGenerator(PJPVisitor):
         if op == '!=':
             self.emit('not')
         return 'bool'
+
+    def visitCharAtExpr(self, ctx):
+        self.visit(ctx.expression(0))  # string na stack
+        self.visit(ctx.expression(1))  # index na stack
+        self.emit('charat')
+        return 'string'
 
     def visitParenExpr(self, ctx):
         return self.visit(ctx.expression())

@@ -104,6 +104,11 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJPParser#CharAtExpr.
+    def visitCharAtExpr(self, ctx:PJPParser.CharAtExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJPParser#EqualNotEqualExpr.
     def visitEqualNotEqualExpr(self, ctx:PJPParser.EqualNotEqualExprContext):
         return self.visitChildren(ctx)

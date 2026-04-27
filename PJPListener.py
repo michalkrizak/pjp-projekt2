@@ -179,6 +179,15 @@ class PJPListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJPParser#CharAtExpr.
+    def enterCharAtExpr(self, ctx:PJPParser.CharAtExprContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#CharAtExpr.
+    def exitCharAtExpr(self, ctx:PJPParser.CharAtExprContext):
+        pass
+
+
     # Enter a parse tree produced by PJPParser#EqualNotEqualExpr.
     def enterEqualNotEqualExpr(self, ctx:PJPParser.EqualNotEqualExprContext):
         pass

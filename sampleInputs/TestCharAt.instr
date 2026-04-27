@@ -1,0 +1,18 @@
+push S ""
+save s
+push S "Hello"
+save s
+load s
+pop
+load s
+push I 0
+charat
+print 1
+load s
+push I 1
+charat
+print 1
+push S "World"
+push I 4
+charat
+print 1

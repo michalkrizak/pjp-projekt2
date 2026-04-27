@@ -115,6 +115,11 @@ def run(instructions):
             a = stack.pop()
             stack.append(a == b)
 
+        elif instr == 'charat':
+            idx = stack.pop()
+            s = stack.pop()
+            stack.append(s[idx])
+
         elif instr == 'itof':
             stack.append(float(stack.pop()))
 

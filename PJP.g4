@@ -30,6 +30,7 @@ expression
         |   expression '&&' expression                              #AndExpr
         |   expression '||' expression                              #OrExpr
         |   VAR '=' expression                                #AssignExpr
+        |   'charAt' '(' expression ',' expression ')'        #CharAtExpr
         |   '(' expression ')'                                #ParenExpr
         |   INT                                         #IntExpr
         |   FLOAT                                       #FloatExpr

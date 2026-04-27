@@ -1,0 +1,5 @@
+string s;
+s = "Hello";
+write charAt(s, 0);
+write charAt(s, 1);
+write charAt("World", 4);
