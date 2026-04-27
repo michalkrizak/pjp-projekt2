@@ -59,8 +59,8 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by PJPParser#FappendStat.
-    def visitFappendStat(self, ctx:PJPParser.FappendStatContext):
+    # Visit a parse tree produced by PJPParser#FwriteStat.
+    def visitFwriteStat(self, ctx:PJPParser.FwriteStatContext):
         return self.visitChildren(ctx)
 
 

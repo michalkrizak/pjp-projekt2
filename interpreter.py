@@ -139,16 +139,16 @@ def run(instructions):
                 print(format_val(v), end='')
             print()
 
-        elif instr == 'fopen':
+        elif instr == 'open':
             filename = stack.pop()
             stack.append(open(filename, 'w'))
 
-        elif instr == 'fappend':
+        elif instr == 'fwrite':
             n = int(parts[1])
             items = stack[-n:]
             del stack[-n:]
-            f = items[0]      
-            vals = items[1:] 
+            f = items[0]       # file handle je prvni (spodek)
+            vals = items[1:]   # zbytek jsou hodnoty
             for v in vals:
                 f.write(format_val(v))
             f.write('\n')

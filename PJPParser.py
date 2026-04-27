@@ -10,55 +10,55 @@ else:
 
 def serializedATN():
     return [
-        4,1,39,137,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,5,0,10,8,0,10,0,12,
+        4,1,39,136,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,1,0,5,0,10,8,0,10,0,12,
         0,13,9,0,1,0,1,0,1,1,1,1,1,1,1,1,1,1,5,1,22,8,1,10,1,12,1,25,9,1,
         1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,5,1,36,8,1,10,1,12,1,39,9,1,
         1,1,1,1,1,1,1,1,1,1,5,1,46,8,1,10,1,12,1,49,9,1,1,1,1,1,1,1,1,1,
         5,1,55,8,1,10,1,12,1,58,9,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,
-        68,8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
-        1,4,1,85,8,1,11,1,12,1,86,1,1,1,1,3,1,91,8,1,1,2,1,2,1,3,1,3,1,3,
-        1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,112,
-        8,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
-        1,3,1,3,1,3,5,3,132,8,3,10,3,12,3,135,9,3,1,3,0,1,6,4,0,2,4,6,0,
-        5,1,0,14,18,1,0,21,23,2,0,19,19,24,25,1,0,26,27,1,0,28,29,162,0,
-        11,1,0,0,0,2,90,1,0,0,0,4,92,1,0,0,0,6,111,1,0,0,0,8,10,3,2,1,0,
-        9,8,1,0,0,0,10,13,1,0,0,0,11,9,1,0,0,0,11,12,1,0,0,0,12,14,1,0,0,
-        0,13,11,1,0,0,0,14,15,5,0,0,1,15,1,1,0,0,0,16,91,5,1,0,0,17,18,3,
-        4,2,0,18,23,5,37,0,0,19,20,5,2,0,0,20,22,5,37,0,0,21,19,1,0,0,0,
-        22,25,1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,0,24,26,1,0,0,0,25,23,1,
-        0,0,0,26,27,5,1,0,0,27,91,1,0,0,0,28,29,3,6,3,0,29,30,5,1,0,0,30,
-        91,1,0,0,0,31,32,5,3,0,0,32,37,5,37,0,0,33,34,5,2,0,0,34,36,5,37,
-        0,0,35,33,1,0,0,0,36,39,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,40,
-        1,0,0,0,39,37,1,0,0,0,40,91,5,1,0,0,41,42,5,4,0,0,42,47,3,6,3,0,
-        43,44,5,2,0,0,44,46,3,6,3,0,45,43,1,0,0,0,46,49,1,0,0,0,47,45,1,
-        0,0,0,47,48,1,0,0,0,48,50,1,0,0,0,49,47,1,0,0,0,50,51,5,1,0,0,51,
-        91,1,0,0,0,52,56,5,5,0,0,53,55,3,2,1,0,54,53,1,0,0,0,55,58,1,0,0,
-        0,56,54,1,0,0,0,56,57,1,0,0,0,57,59,1,0,0,0,58,56,1,0,0,0,59,91,
-        5,6,0,0,60,61,5,7,0,0,61,62,5,8,0,0,62,63,3,6,3,0,63,64,5,9,0,0,
-        64,67,3,2,1,0,65,66,5,10,0,0,66,68,3,2,1,0,67,65,1,0,0,0,67,68,1,
-        0,0,0,68,91,1,0,0,0,69,70,5,11,0,0,70,71,5,8,0,0,71,72,3,6,3,0,72,
-        73,5,9,0,0,73,74,3,2,1,0,74,91,1,0,0,0,75,76,5,12,0,0,76,77,5,37,
-        0,0,77,78,5,2,0,0,78,79,5,36,0,0,79,91,5,1,0,0,80,81,5,13,0,0,81,
-        84,5,37,0,0,82,83,5,2,0,0,83,85,3,6,3,0,84,82,1,0,0,0,85,86,1,0,
-        0,0,86,84,1,0,0,0,86,87,1,0,0,0,87,88,1,0,0,0,88,89,5,1,0,0,89,91,
-        1,0,0,0,90,16,1,0,0,0,90,17,1,0,0,0,90,28,1,0,0,0,90,31,1,0,0,0,
-        90,41,1,0,0,0,90,52,1,0,0,0,90,60,1,0,0,0,90,69,1,0,0,0,90,75,1,
-        0,0,0,90,80,1,0,0,0,91,3,1,0,0,0,92,93,7,0,0,0,93,5,1,0,0,0,94,95,
-        6,3,-1,0,95,96,5,19,0,0,96,112,3,6,3,15,97,98,5,20,0,0,98,112,3,
-        6,3,14,99,100,5,37,0,0,100,101,5,32,0,0,101,112,3,6,3,7,102,103,
-        5,8,0,0,103,104,3,6,3,0,104,105,5,9,0,0,105,112,1,0,0,0,106,112,
-        5,34,0,0,107,112,5,33,0,0,108,112,5,35,0,0,109,112,5,36,0,0,110,
-        112,5,37,0,0,111,94,1,0,0,0,111,97,1,0,0,0,111,99,1,0,0,0,111,102,
-        1,0,0,0,111,106,1,0,0,0,111,107,1,0,0,0,111,108,1,0,0,0,111,109,
-        1,0,0,0,111,110,1,0,0,0,112,133,1,0,0,0,113,114,10,13,0,0,114,115,
-        7,1,0,0,115,132,3,6,3,14,116,117,10,12,0,0,117,118,7,2,0,0,118,132,
-        3,6,3,13,119,120,10,11,0,0,120,121,7,3,0,0,121,132,3,6,3,12,122,
-        123,10,10,0,0,123,124,7,4,0,0,124,132,3,6,3,11,125,126,10,9,0,0,
-        126,127,5,30,0,0,127,132,3,6,3,10,128,129,10,8,0,0,129,130,5,31,
-        0,0,130,132,3,6,3,9,131,113,1,0,0,0,131,116,1,0,0,0,131,119,1,0,
-        0,0,131,122,1,0,0,0,131,125,1,0,0,0,131,128,1,0,0,0,132,135,1,0,
-        0,0,133,131,1,0,0,0,133,134,1,0,0,0,134,7,1,0,0,0,135,133,1,0,0,
-        0,11,11,23,37,47,56,67,86,90,111,131,133
+        68,8,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,4,
+        1,84,8,1,11,1,12,1,85,1,1,1,1,3,1,90,8,1,1,2,1,2,1,3,1,3,1,3,1,3,
+        1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,3,3,111,8,3,
+        1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
+        1,3,1,3,5,3,131,8,3,10,3,12,3,134,9,3,1,3,0,1,6,4,0,2,4,6,0,5,1,
+        0,14,18,1,0,21,23,2,0,19,19,24,25,1,0,26,27,1,0,28,29,161,0,11,1,
+        0,0,0,2,89,1,0,0,0,4,91,1,0,0,0,6,110,1,0,0,0,8,10,3,2,1,0,9,8,1,
+        0,0,0,10,13,1,0,0,0,11,9,1,0,0,0,11,12,1,0,0,0,12,14,1,0,0,0,13,
+        11,1,0,0,0,14,15,5,0,0,1,15,1,1,0,0,0,16,90,5,1,0,0,17,18,3,4,2,
+        0,18,23,5,37,0,0,19,20,5,2,0,0,20,22,5,37,0,0,21,19,1,0,0,0,22,25,
+        1,0,0,0,23,21,1,0,0,0,23,24,1,0,0,0,24,26,1,0,0,0,25,23,1,0,0,0,
+        26,27,5,1,0,0,27,90,1,0,0,0,28,29,3,6,3,0,29,30,5,1,0,0,30,90,1,
+        0,0,0,31,32,5,3,0,0,32,37,5,37,0,0,33,34,5,2,0,0,34,36,5,37,0,0,
+        35,33,1,0,0,0,36,39,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,40,1,
+        0,0,0,39,37,1,0,0,0,40,90,5,1,0,0,41,42,5,4,0,0,42,47,3,6,3,0,43,
+        44,5,2,0,0,44,46,3,6,3,0,45,43,1,0,0,0,46,49,1,0,0,0,47,45,1,0,0,
+        0,47,48,1,0,0,0,48,50,1,0,0,0,49,47,1,0,0,0,50,51,5,1,0,0,51,90,
+        1,0,0,0,52,56,5,5,0,0,53,55,3,2,1,0,54,53,1,0,0,0,55,58,1,0,0,0,
+        56,54,1,0,0,0,56,57,1,0,0,0,57,59,1,0,0,0,58,56,1,0,0,0,59,90,5,
+        6,0,0,60,61,5,7,0,0,61,62,5,8,0,0,62,63,3,6,3,0,63,64,5,9,0,0,64,
+        67,3,2,1,0,65,66,5,10,0,0,66,68,3,2,1,0,67,65,1,0,0,0,67,68,1,0,
+        0,0,68,90,1,0,0,0,69,70,5,11,0,0,70,71,5,8,0,0,71,72,3,6,3,0,72,
+        73,5,9,0,0,73,74,3,2,1,0,74,90,1,0,0,0,75,76,5,12,0,0,76,77,5,37,
+        0,0,77,78,5,36,0,0,78,90,5,1,0,0,79,80,5,13,0,0,80,83,5,37,0,0,81,
+        82,5,2,0,0,82,84,3,6,3,0,83,81,1,0,0,0,84,85,1,0,0,0,85,83,1,0,0,
+        0,85,86,1,0,0,0,86,87,1,0,0,0,87,88,5,1,0,0,88,90,1,0,0,0,89,16,
+        1,0,0,0,89,17,1,0,0,0,89,28,1,0,0,0,89,31,1,0,0,0,89,41,1,0,0,0,
+        89,52,1,0,0,0,89,60,1,0,0,0,89,69,1,0,0,0,89,75,1,0,0,0,89,79,1,
+        0,0,0,90,3,1,0,0,0,91,92,7,0,0,0,92,5,1,0,0,0,93,94,6,3,-1,0,94,
+        95,5,19,0,0,95,111,3,6,3,15,96,97,5,20,0,0,97,111,3,6,3,14,98,99,
+        5,37,0,0,99,100,5,32,0,0,100,111,3,6,3,7,101,102,5,8,0,0,102,103,
+        3,6,3,0,103,104,5,9,0,0,104,111,1,0,0,0,105,111,5,34,0,0,106,111,
+        5,33,0,0,107,111,5,35,0,0,108,111,5,36,0,0,109,111,5,37,0,0,110,
+        93,1,0,0,0,110,96,1,0,0,0,110,98,1,0,0,0,110,101,1,0,0,0,110,105,
+        1,0,0,0,110,106,1,0,0,0,110,107,1,0,0,0,110,108,1,0,0,0,110,109,
+        1,0,0,0,111,132,1,0,0,0,112,113,10,13,0,0,113,114,7,1,0,0,114,131,
+        3,6,3,14,115,116,10,12,0,0,116,117,7,2,0,0,117,131,3,6,3,13,118,
+        119,10,11,0,0,119,120,7,3,0,0,120,131,3,6,3,12,121,122,10,10,0,0,
+        122,123,7,4,0,0,123,131,3,6,3,11,124,125,10,9,0,0,125,126,5,30,0,
+        0,126,131,3,6,3,10,127,128,10,8,0,0,128,129,5,31,0,0,129,131,3,6,
+        3,9,130,112,1,0,0,0,130,115,1,0,0,0,130,118,1,0,0,0,130,121,1,0,
+        0,0,130,124,1,0,0,0,130,127,1,0,0,0,131,134,1,0,0,0,132,130,1,0,
+        0,0,132,133,1,0,0,0,133,7,1,0,0,0,134,132,1,0,0,0,11,11,23,37,47,
+        56,67,85,89,110,130,132
     ]
 
 class PJPParser ( Parser ):
@@ -73,7 +73,7 @@ class PJPParser ( Parser ):
 
     literalNames = [ "<INVALID>", "';'", "','", "'read'", "'write'", "'{'", 
                      "'}'", "'if'", "'('", "')'", "'else'", "'while'", "'fopen'", 
-                     "'fappend'", "'int'", "'float'", "'bool'", "'string'", 
+                     "'fwrite'", "'int'", "'float'", "'bool'", "'string'", 
                      "'FILE'", "'-'", "'!'", "'*'", "'/'", "'%'", "'+'", 
                      "'.'", "'<'", "'>'", "'=='", "'!='", "'&&'", "'||'", 
                      "'='" ]
@@ -226,36 +226,6 @@ class PJPParser ( Parser ):
         def copyFrom(self, ctx:ParserRuleContext):
             super().copyFrom(ctx)
 
-
-
-    class FappendStatContext(StatementContext):
-
-        def __init__(self, parser, ctx:ParserRuleContext): # actually a PJPParser.StatementContext
-            super().__init__(parser)
-            self.copyFrom(ctx)
-
-        def VAR(self):
-            return self.getToken(PJPParser.VAR, 0)
-        def expression(self, i:int=None):
-            if i is None:
-                return self.getTypedRuleContexts(PJPParser.ExpressionContext)
-            else:
-                return self.getTypedRuleContext(PJPParser.ExpressionContext,i)
-
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterFappendStat" ):
-                listener.enterFappendStat(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitFappendStat" ):
-                listener.exitFappendStat(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitFappendStat" ):
-                return visitor.visitFappendStat(self)
-            else:
-                return visitor.visitChildren(self)
 
 
     class ExpressionStatContext(StatementContext):
@@ -420,6 +390,36 @@ class PJPParser ( Parser ):
                 return visitor.visitChildren(self)
 
 
+    class FwriteStatContext(StatementContext):
+
+        def __init__(self, parser, ctx:ParserRuleContext): # actually a PJPParser.StatementContext
+            super().__init__(parser)
+            self.copyFrom(ctx)
+
+        def VAR(self):
+            return self.getToken(PJPParser.VAR, 0)
+        def expression(self, i:int=None):
+            if i is None:
+                return self.getTypedRuleContexts(PJPParser.ExpressionContext)
+            else:
+                return self.getTypedRuleContext(PJPParser.ExpressionContext,i)
+
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterFwriteStat" ):
+                listener.enterFwriteStat(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitFwriteStat" ):
+                listener.exitFwriteStat(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitFwriteStat" ):
+                return visitor.visitFwriteStat(self)
+            else:
+                return visitor.visitChildren(self)
+
+
     class WriteStatContext(StatementContext):
 
         def __init__(self, parser, ctx:ParserRuleContext): # actually a PJPParser.StatementContext
@@ -510,7 +510,7 @@ class PJPParser ( Parser ):
         self.enterRule(localctx, 2, self.RULE_statement)
         self._la = 0 # Token type
         try:
-            self.state = 90
+            self.state = 89
             self._errHandler.sync(self)
             token = self._input.LA(1)
             if token in [1]:
@@ -657,34 +657,32 @@ class PJPParser ( Parser ):
                 self.state = 76
                 self.match(PJPParser.VAR)
                 self.state = 77
-                self.match(PJPParser.T__1)
-                self.state = 78
                 self.match(PJPParser.STRING)
-                self.state = 79
+                self.state = 78
                 self.match(PJPParser.T__0)
                 pass
             elif token in [13]:
-                localctx = PJPParser.FappendStatContext(self, localctx)
+                localctx = PJPParser.FwriteStatContext(self, localctx)
                 self.enterOuterAlt(localctx, 10)
-                self.state = 80
+                self.state = 79
                 self.match(PJPParser.T__12)
-                self.state = 81
+                self.state = 80
                 self.match(PJPParser.VAR)
-                self.state = 84 
+                self.state = 83 
                 self._errHandler.sync(self)
                 _la = self._input.LA(1)
                 while True:
-                    self.state = 82
+                    self.state = 81
                     self.match(PJPParser.T__1)
-                    self.state = 83
+                    self.state = 82
                     self.expression(0)
-                    self.state = 86 
+                    self.state = 85 
                     self._errHandler.sync(self)
                     _la = self._input.LA(1)
                     if not (_la==2):
                         break
 
-                self.state = 88
+                self.state = 87
                 self.match(PJPParser.T__0)
                 pass
             else:
@@ -734,7 +732,7 @@ class PJPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 92
+            self.state = 91
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 507904) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1171,7 +1169,7 @@ class PJPParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 111
+            self.state = 110
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,8,self._ctx)
             if la_ == 1:
@@ -1179,9 +1177,9 @@ class PJPParser ( Parser ):
                 self._ctx = localctx
                 _prevctx = localctx
 
-                self.state = 95
+                self.state = 94
                 self.match(PJPParser.T__18)
-                self.state = 96
+                self.state = 95
                 self.expression(15)
                 pass
 
@@ -1189,9 +1187,9 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.LogicNotExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 97
+                self.state = 96
                 self.match(PJPParser.T__19)
-                self.state = 98
+                self.state = 97
                 self.expression(14)
                 pass
 
@@ -1199,11 +1197,11 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.AssignExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 99
+                self.state = 98
                 self.match(PJPParser.VAR)
-                self.state = 100
+                self.state = 99
                 self.match(PJPParser.T__31)
-                self.state = 101
+                self.state = 100
                 self.expression(7)
                 pass
 
@@ -1211,11 +1209,11 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.ParenExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 102
+                self.state = 101
                 self.match(PJPParser.T__7)
-                self.state = 103
+                self.state = 102
                 self.expression(0)
-                self.state = 104
+                self.state = 103
                 self.match(PJPParser.T__8)
                 pass
 
@@ -1223,7 +1221,7 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.IntExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 106
+                self.state = 105
                 self.match(PJPParser.INT)
                 pass
 
@@ -1231,7 +1229,7 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.FloatExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 107
+                self.state = 106
                 self.match(PJPParser.FLOAT)
                 pass
 
@@ -1239,7 +1237,7 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.BoolExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 108
+                self.state = 107
                 self.match(PJPParser.BOOL)
                 pass
 
@@ -1247,7 +1245,7 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.StringExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 109
+                self.state = 108
                 self.match(PJPParser.STRING)
                 pass
 
@@ -1255,13 +1253,13 @@ class PJPParser ( Parser ):
                 localctx = PJPParser.VarExprContext(self, localctx)
                 self._ctx = localctx
                 _prevctx = localctx
-                self.state = 110
+                self.state = 109
                 self.match(PJPParser.VAR)
                 pass
 
 
             self._ctx.stop = self._input.LT(-1)
-            self.state = 133
+            self.state = 132
             self._errHandler.sync(self)
             _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
             while _alt!=2 and _alt!=ATN.INVALID_ALT_NUMBER:
@@ -1269,17 +1267,17 @@ class PJPParser ( Parser ):
                     if self._parseListeners is not None:
                         self.triggerExitRuleEvent()
                     _prevctx = localctx
-                    self.state = 131
+                    self.state = 130
                     self._errHandler.sync(self)
                     la_ = self._interp.adaptivePredict(self._input,9,self._ctx)
                     if la_ == 1:
                         localctx = PJPParser.MultDivModExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 113
+                        self.state = 112
                         if not self.precpred(self._ctx, 13):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 13)")
-                        self.state = 114
+                        self.state = 113
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 14680064) != 0)):
@@ -1287,18 +1285,18 @@ class PJPParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 115
+                        self.state = 114
                         self.expression(14)
                         pass
 
                     elif la_ == 2:
                         localctx = PJPParser.PlusMinusConcatExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 116
+                        self.state = 115
                         if not self.precpred(self._ctx, 12):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 12)")
-                        self.state = 117
+                        self.state = 116
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 50855936) != 0)):
@@ -1306,18 +1304,18 @@ class PJPParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 118
+                        self.state = 117
                         self.expression(13)
                         pass
 
                     elif la_ == 3:
                         localctx = PJPParser.HigherLowerExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 119
+                        self.state = 118
                         if not self.precpred(self._ctx, 11):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 11)")
-                        self.state = 120
+                        self.state = 119
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==26 or _la==27):
@@ -1325,18 +1323,18 @@ class PJPParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 121
+                        self.state = 120
                         self.expression(12)
                         pass
 
                     elif la_ == 4:
                         localctx = PJPParser.EqualNotEqualExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 122
+                        self.state = 121
                         if not self.precpred(self._ctx, 10):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 10)")
-                        self.state = 123
+                        self.state = 122
                         localctx.op = self._input.LT(1)
                         _la = self._input.LA(1)
                         if not(_la==28 or _la==29):
@@ -1344,38 +1342,38 @@ class PJPParser ( Parser ):
                         else:
                             self._errHandler.reportMatch(self)
                             self.consume()
-                        self.state = 124
+                        self.state = 123
                         self.expression(11)
                         pass
 
                     elif la_ == 5:
                         localctx = PJPParser.AndExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 125
+                        self.state = 124
                         if not self.precpred(self._ctx, 9):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 9)")
-                        self.state = 126
+                        self.state = 125
                         self.match(PJPParser.T__29)
-                        self.state = 127
+                        self.state = 126
                         self.expression(10)
                         pass
 
                     elif la_ == 6:
                         localctx = PJPParser.OrExprContext(self, PJPParser.ExpressionContext(self, _parentctx, _parentState))
                         self.pushNewRecursionContext(localctx, _startState, self.RULE_expression)
-                        self.state = 128
+                        self.state = 127
                         if not self.precpred(self._ctx, 8):
                             from antlr4.error.Errors import FailedPredicateException
                             raise FailedPredicateException(self, "self.precpred(self._ctx, 8)")
-                        self.state = 129
+                        self.state = 128
                         self.match(PJPParser.T__30)
-                        self.state = 130
+                        self.state = 129
                         self.expression(9)
                         pass
 
              
-                self.state = 135
+                self.state = 134
                 self._errHandler.sync(self)
                 _alt = self._interp.adaptivePredict(self._input,10,self._ctx)
 

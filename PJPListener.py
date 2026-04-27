@@ -98,12 +98,12 @@ class PJPListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by PJPParser#FappendStat.
-    def enterFappendStat(self, ctx:PJPParser.FappendStatContext):
+    # Enter a parse tree produced by PJPParser#FwriteStat.
+    def enterFwriteStat(self, ctx:PJPParser.FwriteStatContext):
         pass
 
-    # Exit a parse tree produced by PJPParser#FappendStat.
-    def exitFappendStat(self, ctx:PJPParser.FappendStatContext):
+    # Exit a parse tree produced by PJPParser#FwriteStat.
+    def exitFwriteStat(self, ctx:PJPParser.FwriteStatContext):
         pass
 
 

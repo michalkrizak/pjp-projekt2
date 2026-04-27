@@ -31,7 +31,7 @@ class TypeChecker(PJPVisitor):
         if self.variables[name] != 'FILE':
             self.errors.append(f"Error: '{name}' must be FILE type")
 
-    def visitFappendStat(self, ctx):
+    def visitFwriteStat(self, ctx):
         name = ctx.VAR().getText()
         if name not in self.variables:
             self.errors.append(f"Error: '{name}' not declared")
@@ -275,17 +275,17 @@ class CodeGenerator(PJPVisitor):
         name = ctx.VAR().getText()
         filename = ctx.STRING().getText()  # vraci "soubor.txt" vcetne uvozovek
         self.emit(f'push S {filename}')
-        self.emit('fopen')
+        self.emit('open')
         self.emit(f'save {name}')
 
-    def visitFappendStat(self, ctx):
+    def visitFwriteStat(self, ctx):
         name = ctx.VAR().getText()
         self.emit(f'load {name}')          # file handle na stack
         count = 1                          # pocita file handle + hodnoty
         for e in ctx.expression():
             self.visit(e)
             count += 1
-        self.emit(f'fappend {count}')
+        self.emit(f'fwrite {count}')
 
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
