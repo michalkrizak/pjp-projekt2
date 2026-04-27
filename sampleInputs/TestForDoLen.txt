@@ -1,0 +1,26 @@
+// Test for cyklu
+write "for 0..4:";
+int i;
+for (i = 0; i < 5; i = i + 1)
+    write i;
+
+// Test do-while
+write "do-while od 3 do 0:";
+int n;
+n = 3;
+do {
+    write n;
+    n = n - 1;
+} while (n > 0);
+
+// Test len
+string s;
+s = "Hello";
+write "len(Hello): ", len(s);
+write "len prazdny: ", len("");
+
+// Test len v podmince
+int j;
+s = "Ahoj";
+for (j = 0; j < len(s); j = j + 1)
+    write charAt(s, j);

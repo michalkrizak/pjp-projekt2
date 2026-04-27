@@ -120,6 +120,31 @@ def run(instructions):
             s = stack.pop()
             stack.append(s[idx])
 
+        elif instr == 'len':
+            stack.append(len(stack.pop()))
+
+        elif instr == 'fopen':
+            filename = stack.pop()
+            stack.append(open(filename, 'w'))
+
+        elif instr == 'fwrite':
+            n = int(parts[1])
+            items = stack[-n:]
+            del stack[-n:]
+            f = items[0]
+            for v in items[1:]:
+                f.write(format_val(v))
+            f.write('\n')
+
+        elif instr == 'fappend':
+            n = int(parts[1])
+            items = stack[-n:]
+            del stack[-n:]
+            f = items[0]
+            for v in items[1:]:
+                f.write(format_val(v))
+            f.write('\n')
+
         elif instr == 'itof':
             stack.append(float(stack.pop()))
 
@@ -164,6 +189,10 @@ def run(instructions):
                 sys.exit(1)
 
         pc += 1
+
+    for v in variables.values():
+        if hasattr(v, 'close'):
+            v.close()
 
 
 if __name__ == '__main__':

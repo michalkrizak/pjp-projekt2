@@ -7,7 +7,7 @@ from PJPVisitor import PJPVisitor
 
 # Prevod nazvu typu na pismeno pro instrukce
 def tl(typ):
-    return {'int': 'I', 'float': 'F', 'bool': 'B', 'string': 'S'}[typ]
+    return {'int': 'I', 'float': 'F', 'bool': 'B', 'string': 'S', 'FILE': 'S'}[typ]
 
 
 class TypeChecker(PJPVisitor):
@@ -22,6 +22,44 @@ class TypeChecker(PJPVisitor):
 
     def visitEmptyCommandStat(self, ctx):
         pass
+
+    def visitFopenStat(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        if self.variables[name] != 'FILE':
+            self.errors.append(f"Error: '{name}' must be FILE type")
+
+    def visitFwriteStat(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        if self.variables[name] != 'FILE':
+            self.errors.append(f"Error: '{name}' must be FILE type")
+        for e in ctx.expression():
+            self.visit(e)
+
+    def visitFappendStat(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        if self.variables[name] != 'FILE':
+            self.errors.append(f"Error: '{name}' must be FILE type")
+        for e in ctx.expression():
+            self.visit(e)
+
+    def visitFileStreamStat(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        if self.variables[name] != 'FILE':
+            self.errors.append(f"Error: '{name}' must be FILE type")
+        for e in ctx.expression():
+            self.visit(e)
 
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
@@ -62,6 +100,20 @@ class TypeChecker(PJPVisitor):
             self.errors.append("Error: while condition must be bool")
         for s in ctx.statement():
             self.visit(s)
+
+    def visitDoWhileStat(self, ctx):
+        self.visit(ctx.statement())
+        cond = self.visit(ctx.expression())
+        if cond != 'bool':
+            self.errors.append("Error: do-while condition must be bool")
+
+    def visitForStat(self, ctx):
+        self.visit(ctx.expression(0))  # init
+        cond = self.visit(ctx.expression(1))  # podminka
+        if cond != 'bool':
+            self.errors.append("Error: for condition must be bool")
+        self.visit(ctx.expression(2))  # krok
+        self.visit(ctx.statement())
 
     def visitVarType(self, ctx):
         pass
@@ -167,6 +219,12 @@ class TypeChecker(PJPVisitor):
             self.errors.append("Error: charAt second argument must be int")
         return 'string'
 
+    def visitLenExpr(self, ctx):
+        t = self.visit(ctx.expression())
+        if t != 'string':
+            self.errors.append("Error: len requires string argument")
+        return 'int'
+
     def visitHigherLowerExpr(self, ctx):
         l = self.visit(ctx.expression(0))
         r = self.visit(ctx.expression(1))
@@ -255,6 +313,8 @@ class CodeGenerator(PJPVisitor):
             return 'float' if 'float' in (l, r) else 'int'
         if isinstance(ctx, PJPParser.CharAtExprContext):
             return 'string'
+        if isinstance(ctx, PJPParser.LenExprContext):
+            return 'int'
         return None
     
     def visitProg(self, ctx):
@@ -264,9 +324,43 @@ class CodeGenerator(PJPVisitor):
     def visitEmptyCommandStat(self, ctx):
         pass
 
+    def visitFopenStat(self, ctx):
+        name = ctx.VAR().getText()
+        filename = ctx.STRING().getText()
+        self.emit(f'push S {filename}')
+        self.emit('fopen')
+        self.emit(f'save {name}')
+
+    def visitFwriteStat(self, ctx):
+        name = ctx.VAR().getText()
+        self.emit(f'load {name}')
+        count = 1
+        for e in ctx.expression():
+            self.visit(e)
+            count += 1
+        self.emit(f'fwrite {count}')
+
+    def visitFappendStat(self, ctx):
+        name = ctx.VAR().getText()
+        self.emit(f'load {name}')
+        count = 1
+        for e in ctx.expression():
+            self.visit(e)
+            count += 1
+        self.emit(f'fappend {count}')
+
+    def visitFileStreamStat(self, ctx):
+        name = ctx.VAR().getText()
+        self.emit(f'load {name}')
+        count = 1
+        for e in ctx.expression():
+            self.visit(e)
+            count += 1
+        self.emit(f'fwrite {count}')
+
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
-        defaults = {'int': 'push I 0', 'float': 'push F 0.0', 'bool': 'push B false', 'string': 'push S ""'}
+        defaults = {'int': 'push I 0', 'float': 'push F 0.0', 'bool': 'push B false', 'string': 'push S ""', 'FILE': 'push S ""'}
         for id_tok in ctx.VAR():
             name = id_tok.getText()
             self.emit(defaults[typ])
@@ -312,6 +406,30 @@ class CodeGenerator(PJPVisitor):
         self.visit(ctx.expression())
         self.emit(f'fjmp {l_end}')
         self.visit(ctx.statement(0))
+        self.emit(f'jmp {l_start}')
+        self.emit(f'label {l_end}')
+
+    def visitDoWhileStat(self, ctx):
+        l_start = self.new_label()
+        l_end = self.new_label()
+        self.emit(f'label {l_start}')
+        self.visit(ctx.statement())
+        self.visit(ctx.expression())
+        self.emit(f'fjmp {l_end}')
+        self.emit(f'jmp {l_start}')
+        self.emit(f'label {l_end}')
+
+    def visitForStat(self, ctx):
+        l_start = self.new_label()
+        l_end = self.new_label()
+        self.visit(ctx.expression(0))   # init
+        self.emit('pop')
+        self.emit(f'label {l_start}')
+        self.visit(ctx.expression(1))   # podminka
+        self.emit(f'fjmp {l_end}')
+        self.visit(ctx.statement())     # telo
+        self.visit(ctx.expression(2))   # krok
+        self.emit('pop')
         self.emit(f'jmp {l_start}')
         self.emit(f'label {l_end}')
 
@@ -410,6 +528,11 @@ class CodeGenerator(PJPVisitor):
         self.visit(ctx.expression(1))  # index na stack
         self.emit('charat')
         return 'string'
+
+    def visitLenExpr(self, ctx):
+        self.visit(ctx.expression())
+        self.emit('len')
+        return 'int'
 
     def visitParenExpr(self, ctx):
         return self.visit(ctx.expression())

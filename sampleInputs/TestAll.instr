@@ -1,0 +1,40 @@
+push S ""
+save s
+push S "Hello"
+save s
+load s
+pop
+push S "charAt(Hello,1): "
+load s
+push I 1
+charat
+print 2
+push S ""
+save f
+push S "output.txt"
+fopen
+save f
+load f
+push S "radek 1: "
+push I 42
+fwrite 3
+load f
+push S "radek 2: "
+push F 3.14
+fwrite 3
+push S ""
+save g
+push S "output2.txt"
+fopen
+save g
+load g
+push S "stream "
+push S "zapis"
+push I 99
+fwrite 4
+load f
+push S "radek 3: "
+push B true
+fappend 3
+push S "Hotovo, soubory zapsany."
+print 1

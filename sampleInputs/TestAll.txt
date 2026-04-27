@@ -1,0 +1,20 @@
+// Test charAt
+string s;
+s = "Hello";
+write "charAt(Hello,1): ", charAt(s, 1);
+
+// Test fopen + fwrite
+FILE f;
+fopen f "output.txt";
+fwrite f, "radek 1: ", 42;
+fwrite f, "radek 2: ", 3.14;
+
+// Test << syntaxe
+FILE g;
+fopen g "output2.txt";
+g << "stream " << "zapis" << 99;
+
+// Test fappend (pise do jiz otevreneho souboru)
+fappend f, "radek 3: ", true;
+
+write "Hotovo, soubory zapsany.";

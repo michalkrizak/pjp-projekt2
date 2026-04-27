@@ -54,6 +54,36 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJPParser#DoWhileStat.
+    def visitDoWhileStat(self, ctx:PJPParser.DoWhileStatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#ForStat.
+    def visitForStat(self, ctx:PJPParser.ForStatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#FopenStat.
+    def visitFopenStat(self, ctx:PJPParser.FopenStatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#FwriteStat.
+    def visitFwriteStat(self, ctx:PJPParser.FwriteStatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#FappendStat.
+    def visitFappendStat(self, ctx:PJPParser.FappendStatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#FileStreamStat.
+    def visitFileStreamStat(self, ctx:PJPParser.FileStreamStatContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJPParser#varType.
     def visitVarType(self, ctx:PJPParser.VarTypeContext):
         return self.visitChildren(ctx)
@@ -91,6 +121,11 @@ class PJPVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by PJPParser#LogicNotExpr.
     def visitLogicNotExpr(self, ctx:PJPParser.LogicNotExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#LenExpr.
+    def visitLenExpr(self, ctx:PJPParser.LenExprContext):
         return self.visitChildren(ctx)
 
 

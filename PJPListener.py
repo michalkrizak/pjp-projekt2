@@ -89,6 +89,60 @@ class PJPListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJPParser#DoWhileStat.
+    def enterDoWhileStat(self, ctx:PJPParser.DoWhileStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#DoWhileStat.
+    def exitDoWhileStat(self, ctx:PJPParser.DoWhileStatContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#ForStat.
+    def enterForStat(self, ctx:PJPParser.ForStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#ForStat.
+    def exitForStat(self, ctx:PJPParser.ForStatContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#FopenStat.
+    def enterFopenStat(self, ctx:PJPParser.FopenStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#FopenStat.
+    def exitFopenStat(self, ctx:PJPParser.FopenStatContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#FwriteStat.
+    def enterFwriteStat(self, ctx:PJPParser.FwriteStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#FwriteStat.
+    def exitFwriteStat(self, ctx:PJPParser.FwriteStatContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#FappendStat.
+    def enterFappendStat(self, ctx:PJPParser.FappendStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#FappendStat.
+    def exitFappendStat(self, ctx:PJPParser.FappendStatContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#FileStreamStat.
+    def enterFileStreamStat(self, ctx:PJPParser.FileStreamStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#FileStreamStat.
+    def exitFileStreamStat(self, ctx:PJPParser.FileStreamStatContext):
+        pass
+
+
     # Enter a parse tree produced by PJPParser#varType.
     def enterVarType(self, ctx:PJPParser.VarTypeContext):
         pass
@@ -158,6 +212,15 @@ class PJPListener(ParseTreeListener):
 
     # Exit a parse tree produced by PJPParser#LogicNotExpr.
     def exitLogicNotExpr(self, ctx:PJPParser.LogicNotExprContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#LenExpr.
+    def enterLenExpr(self, ctx:PJPParser.LenExprContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#LenExpr.
+    def exitLenExpr(self, ctx:PJPParser.LenExprContext):
         pass
 
 

@@ -8,9 +8,15 @@ statement
         |   expression ';'                                      #ExpressionStat
         |   'read' VAR (',' VAR)* ';'                           #ReadStat
         |   'write' expression (',' expression)* ';'            #WriteStat
-        |   '{' statement* '}'                                  #StatementStat   
+        |   '{' statement* '}'                                  #StatementStat
         |   'if' '(' expression ')' statement ('else' statement)?    #IfStat
         |   'while' '(' expression ')' statement                #WhileStat
+        |   'do' statement 'while' '(' expression ')' ';'      #DoWhileStat
+        |   'for' '(' expression ';' expression ';' expression ')' statement  #ForStat
+        |   'fopen' VAR STRING ';'                              #FopenStat
+        |   'fwrite' VAR (',' expression)+ ';'                  #FwriteStat
+        |   'fappend' VAR (',' expression)+ ';'                 #FappendStat
+        |   VAR ('<<' expression)+ ';'                          #FileStreamStat
         ;
 
 varType
@@ -18,6 +24,7 @@ varType
     |   'float'
     |   'bool'
     |   'string'
+    |   'FILE'
     ;
 
 expression
@@ -31,6 +38,7 @@ expression
         |   expression '||' expression                              #OrExpr
         |   VAR '=' expression                                #AssignExpr
         |   'charAt' '(' expression ',' expression ')'        #CharAtExpr
+        |   'len' '(' expression ')'                          #LenExpr
         |   '(' expression ')'                                #ParenExpr
         |   INT                                         #IntExpr
         |   FLOAT                                       #FloatExpr
