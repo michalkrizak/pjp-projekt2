@@ -139,6 +139,20 @@ def run(instructions):
                 print(format_val(v), end='')
             print()
 
+        elif instr == 'fopen':
+            filename = stack.pop()
+            stack.append(open(filename, 'w'))
+
+        elif instr == 'fappend':
+            n = int(parts[1])
+            items = stack[-n:]
+            del stack[-n:]
+            f = items[0]      
+            vals = items[1:] 
+            for v in vals:
+                f.write(format_val(v))
+            f.write('\n')
+
         elif instr == 'read':
             typ = parts[1]
             line_in = input()
@@ -159,6 +173,11 @@ def run(instructions):
                 sys.exit(1)
 
         pc += 1
+
+    # Zavri vsechny otevrene soubory
+    for v in variables.values():
+        if hasattr(v, 'close'):
+            v.close()
 
 
 if __name__ == '__main__':

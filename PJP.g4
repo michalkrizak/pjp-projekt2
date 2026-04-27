@@ -11,6 +11,8 @@ statement
         |   '{' statement* '}'                                  #StatementStat   
         |   'if' '(' expression ')' statement ('else' statement)?    #IfStat
         |   'while' '(' expression ')' statement                #WhileStat
+        |   'fopen' VAR ',' STRING ';'                          #FopenStat
+        |   'fappend' VAR (',' expression)+ ';'                #FappendStat
         ;
 
 varType
@@ -18,6 +20,7 @@ varType
     |   'float'
     |   'bool'
     |   'string'
+    |   'FILE'
     ;
 
 expression
