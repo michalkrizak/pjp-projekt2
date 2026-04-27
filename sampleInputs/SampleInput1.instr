@@ -90,6 +90,9 @@ concat
 print 2
 push S ""
 print 1
+push S ""
+save f
+fopen f "ahoj.txt"
 push S "<Comments>"
 print 1
 push S "<Automatic int conversion>"

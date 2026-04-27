@@ -7,7 +7,7 @@ from PJPVisitor import PJPVisitor
 
 # Prevod nazvu typu na pismeno pro instrukce
 def tl(typ):
-    return {'int': 'I', 'float': 'F', 'bool': 'B', 'string': 'S'}[typ]
+    return {'int': 'I', 'float': 'F', 'bool': 'B', 'string': 'S', 'FILE' : 'f'}[typ]
 
 
 class TypeChecker(PJPVisitor):
@@ -22,6 +22,27 @@ class TypeChecker(PJPVisitor):
 
     def visitEmptyCommandStat(self, ctx):
         pass
+    
+    def visitFopen(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        var_type = self.variables[name]
+        if var_type != 'FILE':
+            self.errors.append(f"Error: '{name}' should be FILE type")
+    
+    def visitFileInput(self, ctx):
+        name = ctx.VAR().getText()            
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return
+        var_type = self.variables[name] 
+        if var_type != 'FILE':
+            self.errors.append(f"Error: '{name}' should be FILE type")
+        for e in ctx.expression():
+            self.visit(e)
+        
 
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
@@ -252,10 +273,24 @@ class CodeGenerator(PJPVisitor):
 
     def visitEmptyCommandStat(self, ctx):
         pass
+    
+    def visitFopen(self, ctx):
+        name = ctx.VAR().getText()
+        filename = ctx.STRING().getText()
+        self.emit(f'fopen {tl(self.variables[name])} {filename}')
+    
+    
+    def visitFileInput(self, ctx):
+        name = ctx.VAR().getText()
+        count = 0
+        for e in ctx.expression():
+            self.visit(e)
+            count += 1  
+        self.emit(f'fwrite {tl(self.variables[name])} {count}')
 
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
-        defaults = {'int': 'push I 0', 'float': 'push F 0.0', 'bool': 'push B false', 'string': 'push S ""'}
+        defaults = {'int': 'push I 0', 'float': 'push F 0.0', 'bool': 'push B false',  'FILE': 'push S ""', 'string': 'push S ""'}
         for id_tok in ctx.VAR():
             name = id_tok.getText()
             self.emit(defaults[typ])

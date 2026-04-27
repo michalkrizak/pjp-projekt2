@@ -157,6 +157,20 @@ def run(instructions):
             except ValueError:
                 print(f"Chyba: spatny vstup pro typ {typ}")
                 sys.exit(1)
+        elif instr == 'fopen':
+            var_name = parts[1]
+            filename = parts[2][1:-1]
+            variables[var_name] = open(filename, 'w')
+
+        elif instr == 'fwrite':
+            var_name = parts[1]
+            n = int(parts[2])
+            vals = stack[-n:]
+            del stack[-n:]
+            f = variables[var_name]
+            for v in vals:
+                f.write(format_val(v))
+            f.write('\n')
 
         pc += 1
 

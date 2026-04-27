@@ -54,6 +54,16 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJPParser#FileInput.
+    def visitFileInput(self, ctx:PJPParser.FileInputContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#Fopen.
+    def visitFopen(self, ctx:PJPParser.FopenContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJPParser#varType.
     def visitVarType(self, ctx:PJPParser.VarTypeContext):
         return self.visitChildren(ctx)

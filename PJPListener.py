@@ -89,6 +89,24 @@ class PJPListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJPParser#FileInput.
+    def enterFileInput(self, ctx:PJPParser.FileInputContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#FileInput.
+    def exitFileInput(self, ctx:PJPParser.FileInputContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#Fopen.
+    def enterFopen(self, ctx:PJPParser.FopenContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#Fopen.
+    def exitFopen(self, ctx:PJPParser.FopenContext):
+        pass
+
+
     # Enter a parse tree produced by PJPParser#varType.
     def enterVarType(self, ctx:PJPParser.VarTypeContext):
         pass

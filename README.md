@@ -37,3 +37,7 @@ zdrojový kód (.txt)
     → compiler.py  → instrukce (.instr)
     → interpreter.py → výstup
 ```
+
+  - ? = volitelné (0 nebo 1×)
+  - * = nula nebo vícekrát
+  - + = jednou nebo vícekrát
