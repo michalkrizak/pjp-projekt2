@@ -19,6 +19,11 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJPParser#ArrayDeclStat.
+    def visitArrayDeclStat(self, ctx:PJPParser.ArrayDeclStatContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJPParser#DeclarationStat.
     def visitDeclarationStat(self, ctx:PJPParser.DeclarationStatContext):
         return self.visitChildren(ctx)
@@ -94,6 +99,11 @@ class PJPVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by PJPParser#ArrayAccessExpr.
+    def visitArrayAccessExpr(self, ctx:PJPParser.ArrayAccessExprContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by PJPParser#OrExpr.
     def visitOrExpr(self, ctx:PJPParser.OrExprContext):
         return self.visitChildren(ctx)
@@ -111,6 +121,11 @@ class PJPVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by PJPParser#VarExpr.
     def visitVarExpr(self, ctx:PJPParser.VarExprContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by PJPParser#ArrayAssignExpr.
+    def visitArrayAssignExpr(self, ctx:PJPParser.ArrayAssignExprContext):
         return self.visitChildren(ctx)
 
 

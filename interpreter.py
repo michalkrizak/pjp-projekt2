@@ -115,6 +115,23 @@ def run(instructions):
             a = stack.pop()
             stack.append(a == b)
 
+        elif instr == 'createarray':
+            typ = parts[1]
+            size = stack.pop()
+            defaults = {'I': 0, 'F': 0.0, 'B': False, 'S': ''}
+            stack.append([defaults[typ]] * size)
+
+        elif instr == 'arraysave':
+            name = parts[1]
+            idx = stack.pop()
+            val = stack[-1]   # peek — hodnota zustane na stacku
+            variables[name][idx] = val
+
+        elif instr == 'arrayload':
+            name = parts[1]
+            idx = stack.pop()
+            stack.append(variables[name][idx])
+
         elif instr == 'itof':
             stack.append(float(stack.pop()))
 

@@ -26,6 +26,15 @@ class PJPListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJPParser#ArrayDeclStat.
+    def enterArrayDeclStat(self, ctx:PJPParser.ArrayDeclStatContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#ArrayDeclStat.
+    def exitArrayDeclStat(self, ctx:PJPParser.ArrayDeclStatContext):
+        pass
+
+
     # Enter a parse tree produced by PJPParser#DeclarationStat.
     def enterDeclarationStat(self, ctx:PJPParser.DeclarationStatContext):
         pass
@@ -161,6 +170,15 @@ class PJPListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by PJPParser#ArrayAccessExpr.
+    def enterArrayAccessExpr(self, ctx:PJPParser.ArrayAccessExprContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#ArrayAccessExpr.
+    def exitArrayAccessExpr(self, ctx:PJPParser.ArrayAccessExprContext):
+        pass
+
+
     # Enter a parse tree produced by PJPParser#OrExpr.
     def enterOrExpr(self, ctx:PJPParser.OrExprContext):
         pass
@@ -194,6 +212,15 @@ class PJPListener(ParseTreeListener):
 
     # Exit a parse tree produced by PJPParser#VarExpr.
     def exitVarExpr(self, ctx:PJPParser.VarExprContext):
+        pass
+
+
+    # Enter a parse tree produced by PJPParser#ArrayAssignExpr.
+    def enterArrayAssignExpr(self, ctx:PJPParser.ArrayAssignExprContext):
+        pass
+
+    # Exit a parse tree produced by PJPParser#ArrayAssignExpr.
+    def exitArrayAssignExpr(self, ctx:PJPParser.ArrayAssignExprContext):
         pass
 
 

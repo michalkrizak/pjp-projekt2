@@ -23,6 +23,48 @@ class TypeChecker(PJPVisitor):
     def visitEmptyCommandStat(self, ctx):
         pass
 
+    def visitArrayDeclStat(self, ctx):
+        typ = ctx.varType().getText()
+        name = ctx.VAR().getText()
+        if name in self.variables:
+            self.errors.append(f"Error: '{name}' already declared")
+        else:
+            self.variables[name] = typ + '[]'
+
+    def visitArrayAssignExpr(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return None
+        var_type = self.variables[name]
+        if not var_type.endswith('[]'):
+            self.errors.append(f"Error: '{name}' is not an array")
+            return None
+        elem_type = var_type[:-2]
+        idx_type = self.visit(ctx.expression(0))
+        val_type = self.visit(ctx.expression(1))
+        if idx_type != 'int':
+            self.errors.append("Error: array index must be int")
+        if elem_type == 'float' and val_type == 'int':
+            return elem_type
+        if val_type != elem_type:
+            self.errors.append(f"Error: cannot assign {val_type} to {elem_type}[]")
+        return elem_type
+
+    def visitArrayAccessExpr(self, ctx):
+        name = ctx.VAR().getText()
+        if name not in self.variables:
+            self.errors.append(f"Error: '{name}' not declared")
+            return None
+        var_type = self.variables[name]
+        if not var_type.endswith('[]'):
+            self.errors.append(f"Error: '{name}' is not an array")
+            return None
+        idx_type = self.visit(ctx.expression())
+        if idx_type != 'int':
+            self.errors.append("Error: array index must be int")
+        return var_type[:-2]
+
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()
         for id_tok in ctx.VAR():
@@ -244,6 +286,10 @@ class CodeGenerator(PJPVisitor):
             l = self.infer_type(ctx.expression(0))
             r = self.infer_type(ctx.expression(1))
             return 'float' if 'float' in (l, r) else 'int'
+        if isinstance(ctx, PJPParser.ArrayAccessExprContext):
+            return self.variables[ctx.VAR().getText()][:-2]
+        if isinstance(ctx, PJPParser.ArrayAssignExprContext):
+            return self.variables[ctx.VAR().getText()][:-2]
         return None
     
     def visitProg(self, ctx):
@@ -252,6 +298,30 @@ class CodeGenerator(PJPVisitor):
 
     def visitEmptyCommandStat(self, ctx):
         pass
+
+    def visitArrayDeclStat(self, ctx):
+        typ = ctx.varType().getText()
+        size = int(ctx.INT().getText())
+        name = ctx.VAR().getText()
+        self.emit(f'push I {size}')
+        self.emit(f'createarray {tl(typ)}')
+        self.emit(f'save {name}')
+
+    def visitArrayAssignExpr(self, ctx):
+        name = ctx.VAR().getText()
+        elem_type = self.variables[name][:-2]
+        val_type = self.visit(ctx.expression(1))   # hodnota
+        if val_type == 'int' and elem_type == 'float':
+            self.emit('itof')
+        self.visit(ctx.expression(0))              # index
+        self.emit(f'arraysave {name}')
+        return elem_type
+
+    def visitArrayAccessExpr(self, ctx):
+        name = ctx.VAR().getText()
+        self.visit(ctx.expression())               # index
+        self.emit(f'arrayload {name}')
+        return self.variables[name][:-2]
 
     def visitDeclarationStat(self, ctx):
         typ = ctx.varType().getText()

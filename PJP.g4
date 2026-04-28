@@ -4,6 +4,7 @@ prog: statement* EOF;
 
 statement
         :   ';'                                                 #EmptyCommandStat
+        |   varType VAR '[' INT ']' ';'                         #ArrayDeclStat
         |   varType VAR (',' VAR)* ';'                             #DeclarationStat
         |   expression ';'                                      #ExpressionStat
         |   'read' VAR (',' VAR)* ';'                           #ReadStat
@@ -29,7 +30,9 @@ expression
         |   expression op=('=='|'!=') expression                    #EqualNotEqualExpr
         |   expression '&&' expression                              #AndExpr
         |   expression '||' expression                              #OrExpr
+        |   VAR '[' expression ']' '=' expression              #ArrayAssignExpr
         |   VAR '=' expression                                #AssignExpr
+        |   VAR '[' expression ']'                            #ArrayAccessExpr
         |   '(' expression ')'                                #ParenExpr
         |   INT                                         #IntExpr
         |   FLOAT                                       #FloatExpr

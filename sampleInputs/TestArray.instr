@@ -1,0 +1,108 @@
+push I 10
+createarray I
+save a
+push I 10
+push I 1
+arraysave a
+pop
+push I 99
+push I 3
+arraysave a
+pop
+push S "a[1]: "
+push I 1
+arrayload a
+print 2
+push S "10 + a[1]: "
+push I 10
+push I 1
+arrayload a
+add I
+print 2
+push S "a[3]: "
+push I 3
+arrayload a
+print 2
+push S "a[0] (default): "
+push I 0
+arrayload a
+print 2
+push I 5
+createarray F
+save f
+push F 3.14
+push I 0
+arraysave f
+pop
+push F 2.71
+push I 2
+arraysave f
+pop
+push S "f[0]: "
+push I 0
+arrayload f
+print 2
+push S "f[2]: "
+push I 2
+arrayload f
+print 2
+push I 0
+save i
+push I 1
+createarray I
+save sum
+push I 0
+push I 0
+arraysave sum
+pop
+push I 0
+save i
+load i
+pop
+label 0
+load i
+push I 5
+lt I
+fjmp 1
+load i
+load i
+mul I
+load i
+arraysave a
+pop
+push I 0
+arrayload sum
+load i
+arrayload a
+add I
+push I 0
+arraysave sum
+pop
+load i
+push I 1
+add I
+save i
+load i
+pop
+jmp 0
+label 1
+push S "a[0..4]: "
+push I 0
+arrayload a
+push S " "
+push I 1
+arrayload a
+push S " "
+push I 2
+arrayload a
+push S " "
+push I 3
+arrayload a
+push S " "
+push I 4
+arrayload a
+print 10
+push S "suma ctvercu 0-4: "
+push I 0
+arrayload sum
+print 2
